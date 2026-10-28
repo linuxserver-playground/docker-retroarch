@@ -8,9 +8,12 @@ summary: |-
 upstream:
   url: https://retroarch.com/
   version:
-    type: command
-    run: |-
-      curl -s -L https://ppa.launchpadcontent.net/libretro/stable/ubuntu/dists/noble/main/binary-amd64/Packages.gz | gunzip |grep -A 7 -m 1 'Package: retroarch' | awk -F ': ' '/Version/{print $2;exit}' | sed 's|[+~,]||g'
+    type: deb_packages
+    index_url: https://ppa.launchpadcontent.net/libretro/stable/ubuntu/dists/noble/main/binary-amd64/Packages.gz
+    package: retroarch
+    transform:
+    - regex: '[+~,]'
+      replace: ''
 
 release:
   branch: master
