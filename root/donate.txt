@@ -1,0 +1,3 @@
+Donate page: https://retroarch.com/donate.html
+Patreon: https://www.patreon.com/libretro
+GitHub Sponsors: https://github.com/sponsors/libretro
